@@ -8,6 +8,7 @@ const path = require('path');
 
 const AppVersionRoute = require('./routes/appversion')
 const ShowADRoute     = require('./routes/showad')
+const AuthRoute = require('./routes/authRoutes');
 //mongodb://localhost:27017/testdb
 mongoose.connect(process.env.MONGO_URL)
 const db = mongoose.connection
@@ -42,3 +43,4 @@ app.listen(PORT, ()=>{
 
 app.use('/api/appversion', AppVersionRoute)
 app.use('/api/showad', ShowADRoute)
+app.use('/api/auth', AuthRoute);
